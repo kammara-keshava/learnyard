@@ -20,8 +20,10 @@ const port = 8000;
 const app = express();
 
 app.use(express.json());
-app.use(cors());
-app.use(helmet());
+app.use(cors({
+  origin: 'https://learnyard-k.vercel.app',  // your frontend
+  credentials: true,                         // if you use cookies / auth headers
+}));app.use(helmet());
 // app.use(morgan("common"));
 app.get("/", (req, res) => {
   res.send("You are using Algolistedddddd APIs. - a Atanu Nayak production");
