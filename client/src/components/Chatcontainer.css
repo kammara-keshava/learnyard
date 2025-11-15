@@ -1,0 +1,59 @@
+.container_wrapper_wrapper {
+    background-image: url(/public/study_background.avif);
+    background-size: cover;
+    position: relative;
+    padding: 20px;
+}
+
+.container_wrapper_wrapper::after {
+    content: "";
+    background-color: #171b29;
+    background-color: black;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.9;
+}
+
+.container_wrapper {
+    padding: 20px;
+    background-color: #171b29;
+    background-color: black;
+    opacity: 0.9;
+}
+
+
+
+.container {
+    position: relative;
+    background-color: #172751;
+    background-color: #264285;
+    background-color: #2F58CD;
+    background-color: #d6d6d6;
+    z-index: 1;
+    opacity: 1;
+}
+
+
+.chatContainer {
+    width: 100%;
+    /* background-color: #171b29; */
+}
+
+.chatHeader {
+    /* margin: 10px 10px;
+    height: 10%;
+    box-shadow: 3px 6px 25px 2px rgba(0,0,0,0.75);;
+    padding:15px 40px;
+    border:2px solid black;
+    border:none;
+    border-radius: 20px; 
+    background-color: #171b29;
+    color: white;
+    width:70%; */
+    margin: 20px 0;
+    color: rgb(0, 0, 0);
+}
