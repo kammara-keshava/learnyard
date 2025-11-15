@@ -45,7 +45,7 @@ app.options("*", cors());
 app.use(helmet());
 // app.use(morgan("common"));
 app.get("/", (req, res) => {
-  res.send("You are using Algolistedddddd APIs. - a Atanu Nayak production");
+  res.send("You are using Learnyard APIs — a Keshava K production.");
 });
 app.use("/user", userRoutes);
 app.use("/instructor", instructorRoutes);
