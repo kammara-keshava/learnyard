@@ -620,7 +620,7 @@ module.exports.uploadCourseVideo = async (req, res) => {
 
     const videoFileUrl = await uploadToCloudinary(videoFile);
     const videoStream = streamifier.createReadStream(videoFile.buffer);
-    const duration = await getVideoDurationInSeconds(videoStream);
+    // const duration = await getVideoDurationInSeconds(videoStream);
 
     const thumbnailUrl = await uploadToCloudinary(thumbnail);
 
@@ -669,7 +669,7 @@ module.exports.editVideoDetails = async (req, res) => {
       videoFile = req.files["video"][0];
       videoFileUrl = await uploadToCloudinary(videoFile);
       const videoStream = streamifier.createReadStream(videoFile.buffer);
-      duration = await getVideoDurationInSeconds(videoStream);
+      // duration = await getVideoDurationInSeconds(videoStream);
     }
 
     if (req.files["thumbnail"] && req.files["thumbnail"][0]) {

@@ -10,7 +10,7 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 const streamifier = require("streamifier");
-const { getVideoDurationInSeconds } = require("get-video-duration");
+// const { getVideoDurationInSeconds } = require("get-video-duration");
 const cloudinary = require("cloudinary").v2;
 
 const conn = mongoose.connection;
@@ -36,7 +36,7 @@ module.exports.uploadVideo = async (req, res) => {
 
     const videoFileUrl = await uploadToCloudinary(videoFile);
     const videoStream = streamifier.createReadStream(videoFile.buffer);
-    const duration = await getVideoDurationInSeconds(videoStream);
+    // const duration = await getVideoDurationInSeconds(videoStream);
 
     const thumbnailUrl = await uploadToCloudinary(thumbnail);
 
