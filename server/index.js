@@ -19,11 +19,30 @@ const authenticateGeneral = require("./middlewares/authenticationGeneral");
 const port = 8000;
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "https://learnyard-k.vercel.app",
+];
+
 app.use(express.json());
+
 app.use(cors({
-  origin: 'https://learnyard-k.vercel.app',  // your frontend
-  credentials: true,                         // if you use cookies / auth headers
-}));app.use(helmet());
+  origin: function (origin, callback) {
+    // allow mobile apps / curl (no origin) and allowed origins
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error("Not allowed by CORS"));
+  },
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+}));
+
+// Make sure OPTIONS preflight is handled for all routes
+app.options("*", cors());
+
+app.use(helmet());
 // app.use(morgan("common"));
 app.get("/", (req, res) => {
   res.send("You are using Algolistedddddd APIs. - a Atanu Nayak production");
