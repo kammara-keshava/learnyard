@@ -25,7 +25,7 @@ const Search = () => {
   const fetchHandler = async () => {
     console.log(searchValue);
     if (searchValue !== "") {
-      const res = await fetch("/search", {
+      const res = await fetch(`${process.env.REACT_APP_BASE_URL}/search`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

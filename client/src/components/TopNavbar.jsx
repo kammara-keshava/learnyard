@@ -15,8 +15,8 @@ const TopNavbar = () => {
       </div>
       <div className="right">
         <div className="text">
-          <div className="top-text">@NayakPenguin - </div>
-          <div className="bottom-text">Atanu Nayak</div>
+          <div className="top-text">@Learnyard - </div>
+          <div className="bottom-text">Keshava K</div>
         </div>
         <div className="avatar"><img src="https://avatars.githubusercontent.com/u/93304796?v=4" alt="" /></div>
       </div>
